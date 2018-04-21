@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView } from 'react-native';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
@@ -32,7 +32,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Text>Hány grammban van ennyi CH?</Text>
 
         <FormLabel>CH/100g</FormLabel>
@@ -50,7 +50,7 @@ class Main extends React.Component {
             );
           }
         })()}
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
