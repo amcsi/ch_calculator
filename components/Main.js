@@ -36,10 +36,10 @@ class Main extends React.Component {
         <Text>Hány grammban van ennyi CH?</Text>
 
         <FormLabel>CH/100g</FormLabel>
-        <FormInput keyboardType="numeric" onChangeText={this.onChPer100GramChange} />
+        <FormInput keyboardType="numeric" selectTextOnFocus onChangeText={this.onChPer100GramChange} />
 
         <FormLabel>CH/étkezés</FormLabel>
-        <FormInput keyboardType="numeric" onChangeText={this.onChPerMealChange} />
+        <FormInput keyboardType="numeric" selectTextOnFocus onChangeText={this.onChPerMealChange} />
 
         {(() => {
           if (this.state.resultGrams !== null && this.state.resultGrams !== undefined) {
