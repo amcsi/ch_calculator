@@ -20,6 +20,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": { "package": "anything" },
     "ios": {
       "supportsTablet": true
     }
