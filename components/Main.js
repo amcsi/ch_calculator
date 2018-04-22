@@ -9,28 +9,27 @@ class Main extends React.Component {
   state = {
     chPer100G: '0',
     chPerMeal: '0',
-    resultGrams: null,
   };
 
-  recalculateResult = () => {
+  calculateResultGrams = () => {
     let resultGrams = null;
     if (this.state.chPer100G > 0) {
       resultGrams = ((this.state.chPerMeal * 100) / this.state.chPer100G);
     }
-    this.setState({ resultGrams });
+    return resultGrams;
   };
 
   onChPer100GramChange = chPer100G => {
     this.setState({ chPer100G });
-    this.recalculateResult();
   };
 
   onChPerMealChange = chPerMeal => {
     this.setState({ chPerMeal });
-    this.recalculateResult();
   };
 
   render() {
+    const resultGrams = this.calculateResultGrams();
+
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <Text>Hány grammban van ennyi CH?</Text>
@@ -42,10 +41,10 @@ class Main extends React.Component {
         <FormInput keyboardType="numeric" selectTextOnFocus onChangeText={this.onChPerMealChange} />
 
         {(() => {
-          if (this.state.resultGrams !== null && this.state.resultGrams !== undefined) {
+          if (resultGrams > 0) {
             return (
               <Text>
-                {this.state.resultGrams} g összetevőben van ennyi CH
+                {resultGrams} g összetevőben van ennyi CH
               </Text>
             );
           }
