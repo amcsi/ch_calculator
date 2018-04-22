@@ -53,7 +53,7 @@ class Main extends React.Component {
                 <FormattedNumber
                   value={resultGrams}
                   style={defaultTextStyle}
-                  maximumFractionDigits={2}
+                  maximumFractionDigits={0}
                 />
                 <Text>
                   g összetevőben van ennyi CH
