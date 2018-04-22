@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormLabel as RNEFormLabel } from 'react-native-elements';
+import defaultTextStyle from '../../data/defaultTextStyle';
 
 /**
  * Form label with some styles on it already.
@@ -7,9 +8,8 @@ import { FormLabel as RNEFormLabel } from 'react-native-elements';
  * @class
  **/
 function FormLabel({ labelStyle, ...restProps }) {
-  const defaultStyle = { color: 'white' };
   return (
-    <RNEFormLabel labelStyle={[defaultStyle, labelStyle]} {...restProps} />
+    <RNEFormLabel labelStyle={[defaultTextStyle, labelStyle]} {...restProps} />
   );
 }
 

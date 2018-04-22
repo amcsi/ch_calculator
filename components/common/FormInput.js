@@ -1,11 +1,11 @@
 import React from 'react';
 import { FormInput as RNEFormInput } from 'react-native-elements';
+import defaultTextStyle from '../../data/defaultTextStyle';
 
 /** @class */
 function FormInput({ inputStyle, ...restProps }) {
-  const defaultStyle = { color: 'white' };
   return (
-    <RNEFormInput inputStyle={[defaultStyle, inputStyle]} {...restProps} />
+    <RNEFormInput inputStyle={[defaultTextStyle, inputStyle]} {...restProps} />
   );
 }
 
