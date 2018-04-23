@@ -5,11 +5,13 @@ import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
 import defaultTextStyle from '../data/defaultTextStyle';
+import { calculateChInGrams } from '../services/calculators';
 
 /** @class */
 class ChToGrams extends React.Component {
   render() {
-    const { chPer100G, chPerMeal, grams, onChPer100GramChange, onGramsChange } = this.props;
+    const { chPer100G, grams, onChPer100GramChange, onGramsChange } = this.props;
+    const chPerMeal = calculateChInGrams(chPer100G, grams);
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -32,7 +34,7 @@ class ChToGrams extends React.Component {
         />
 
         {(() => {
-          if (grams > 0) {
+          if (chPerMeal > 0) {
             return (
               <View style={{ flexDirection: 'row' }}>
                 <FormattedNumber

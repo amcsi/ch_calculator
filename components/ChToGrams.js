@@ -5,11 +5,17 @@ import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
 import defaultTextStyle from '../data/defaultTextStyle';
+import { calculateGramsInCh } from '../services/calculators';
 
-/** @class */
+/**
+ * First page
+ *
+ * @class
+ **/
 class ChToGrams extends React.Component {
   render() {
-    const { chPer100G, chPerMeal, grams, onChPer100GramChange, onChPerMealChange } = this.props;
+    const { chPer100G, chPerMeal, onChPer100GramChange, onChPerMealChange } = this.props;
+    const grams = calculateGramsInCh(chPer100G, chPerMeal);
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>

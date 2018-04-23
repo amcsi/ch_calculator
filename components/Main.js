@@ -1,7 +1,6 @@
 import React from 'react';
 import ChToGrams from './ChToGrams';
 import Swiper from 'react-native-swiper';
-import { calculateChInGrams, calculateGramsInCh } from '../services/calculators';
 import GramsToCh from './GramsToCh';
 
 /** @class */
@@ -12,31 +11,21 @@ class Main extends React.Component {
     grams: 0,
   };
 
-  onFirstChPer100GramChange = chPer100G => {
+  onChPer100GramChange = chPer100G => {
     this.setState({
       chPer100G: Number(chPer100G),
-      grams: calculateGramsInCh(chPer100G, this.state.chPerMeal),
     });
   };
 
-  onFirstChPerMealChange = chPerMeal => {
+  onChPerMealChange = chPerMeal => {
     this.setState({
       chPerMeal: Number(chPerMeal),
-      grams: calculateGramsInCh(this.state.chPer100G, chPerMeal),
     });
   };
 
-  onSecondChPer100GramChange = chPer100G => {
-    this.setState({
-      chPer100G: Number(chPer100G),
-      chPerMeal: calculateChInGrams(chPer100G, this.state.grams),
-    });
-  };
-
-  onSecondGramsChange = grams => {
+  onGramsChange = grams => {
     this.setState({
       grams: Number(grams),
-      chPerMeal: calculateChInGrams(this.state.chPer100G, grams),
     });
   };
 
@@ -46,16 +35,14 @@ class Main extends React.Component {
         <ChToGrams
           chPer100G={this.state.chPer100G}
           chPerMeal={this.state.chPerMeal}
-          grams={this.state.grams}
-          onChPer100GramChange={this.onFirstChPer100GramChange}
-          onChPerMealChange={this.onFirstChPerMealChange}
+          onChPer100GramChange={this.onChPer100GramChange}
+          onChPerMealChange={this.onChPerMealChange}
         />
         <GramsToCh
           chPer100G={this.state.chPer100G}
-          chPerMeal={this.state.chPerMeal}
           grams={this.state.grams}
-          onChPer100GramChange={this.onSecondChPer100GramChange}
-          onChPerMealChange={this.onSecondGramsChange}
+          onChPer100GramChange={this.onChPer100GramChange}
+          onGramsChange={this.onGramsChange}
         />
       </Swiper>
     );
