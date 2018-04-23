@@ -70,7 +70,6 @@ class ChToGrams extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00695C',
     alignItems: 'center',
     justifyContent: 'center',
   },
