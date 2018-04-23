@@ -9,11 +9,11 @@ import defaultTextStyle from '../data/defaultTextStyle';
 /** @class */
 class ChToGrams extends React.Component {
   render() {
-    const { chPer100G, chPerMeal, grams, onChPer100GramChange, onChPerMealChange } = this.props;
+    const { chPer100G, chPerMeal, grams, onChPer100GramChange, onGramsChange } = this.props;
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <Text>Hány grammban van ennyi CH?</Text>
+        <Text>Hány gramm CH van ebben?</Text>
 
         <FormLabel>CH/100g</FormLabel>
         <FormInput
@@ -23,12 +23,12 @@ class ChToGrams extends React.Component {
           onChangeText={onChPer100GramChange}
         />
 
-        <FormLabel>CH/étkezés</FormLabel>
+        <FormLabel>Súly</FormLabel>
         <FormInput
           keyboardType="numeric"
           selectTextOnFocus
-          value={String(chPerMeal) || ''}
-          onChangeText={onChPerMealChange}
+          value={String(grams) || ''}
+          onChangeText={onGramsChange}
         />
 
         {(() => {
@@ -36,13 +36,13 @@ class ChToGrams extends React.Component {
             return (
               <View style={{ flexDirection: 'row' }}>
                 <FormattedNumber
-                  value={grams}
+                  value={chPerMeal}
                   style={defaultTextStyle}
                   maximumFractionDigits={0}
                 />
                 <Text> </Text>
                 <Text>
-                  g összetevőben van ennyi CH
+                  g CH van a lemért összetevőben
                 </Text>
               </View>
             );
