@@ -2,8 +2,10 @@ import React from 'react';
 import ChToGrams from './ChToGrams';
 import Swiper from 'react-native-swiper';
 import GramsToCh from './GramsToCh';
-import { Linking, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import Text from './common/Text';
+import { view } from '../data/defaultStyles';
+import { alternativeText } from '../data/colors';
 
 /** @class */
 class Main extends React.Component {
@@ -11,6 +13,11 @@ class Main extends React.Component {
     chPer100G: 0,
     chPerMeal: 0,
     grams: 0,
+  };
+
+  //noinspection JSUnusedGlobalSymbols
+  static navigationOptions = {
+    header: null,
   };
 
   onChPer100GramChange = chPer100G => {
@@ -33,7 +40,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[view, styles.container]}>
         <Swiper loop={false} activeDotColor="#249081" style={{ flex: 1 }}>
           <ChToGrams
             chPer100G={this.state.chPer100G}
@@ -49,12 +56,8 @@ class Main extends React.Component {
           />
         </Swiper>
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <Text style={styles.credits}>
-            Készítette:
-          </Text>
-          <Text> </Text>
-          <TouchableOpacity onPress={() => Linking.openURL('http://www.szeremi.org/')}>
-            <Text>Szerémi Attila</Text>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('credits')}>
+            <Text style={{ color: alternativeText }}>Készítette: Szerémi Attila</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -67,9 +70,6 @@ const styles = {
     flex: 1,
     display: 'flex',
     backgroundColor: '#00695C',
-  },
-  credits: {
-    textAlign: 'center',
   },
 };
 
