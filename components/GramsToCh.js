@@ -23,6 +23,7 @@ class ChToGrams extends React.Component {
           selectTextOnFocus
           value={chPer100G ? String(chPer100G) : ''}
           onChangeText={onChPer100GramChange}
+          placeholder="CH/100g"
         />
 
         <FormLabel>Súly</FormLabel>
@@ -31,6 +32,7 @@ class ChToGrams extends React.Component {
           selectTextOnFocus
           value={grams ? String(grams) : ''}
           onChangeText={onGramsChange}
+          placeholder="Súly (g)"
         />
 
         {(() => {
