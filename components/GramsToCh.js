@@ -21,7 +21,7 @@ class ChToGrams extends React.Component {
         <FormInput
           keyboardType="numeric"
           selectTextOnFocus
-          value={String(chPer100G) || ''}
+          value={chPer100G ? String(chPer100G) : ''}
           onChangeText={onChPer100GramChange}
         />
 
@@ -29,7 +29,7 @@ class ChToGrams extends React.Component {
         <FormInput
           keyboardType="numeric"
           selectTextOnFocus
-          value={String(grams) || ''}
+          value={grams ? String(grams) : ''}
           onChangeText={onGramsChange}
         />
 
