@@ -4,8 +4,8 @@ import { FormattedNumber } from 'react-native-globalize';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
-import defaultTextStyle from '../data/defaultTextStyle';
 import { calculateGramsInCh } from '../services/calculators';
+import { resultText } from '../data/defaultStyles';
 
 /**
  * First page
@@ -19,7 +19,7 @@ class ChToGrams extends React.Component {
 
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <Text>Hány grammban van ennyi CH?</Text>
+        <Text style={resultText}>Hány grammban van ennyi CH?</Text>
 
         <FormLabel>CH/100g</FormLabel>
         <FormInput
@@ -45,11 +45,11 @@ class ChToGrams extends React.Component {
               <View style={{ flexDirection: 'row' }}>
                 <FormattedNumber
                   value={grams}
-                  style={defaultTextStyle}
+                  style={resultText}
                   maximumFractionDigits={0}
                 />
-                <Text> </Text>
-                <Text>
+                <Text style={resultText}> </Text>
+                <Text style={resultText}>
                   g összetevőben van ennyi CH
                 </Text>
               </View>
