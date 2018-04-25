@@ -16,7 +16,7 @@ class Credits extends React.Component {
         <View style={styles.textContainer}>
           <TextLine>Az alkalmazás az <Link href="https://www.facebook.com/groups/428087894039073/">Inzulinrezisztens
             Étrend</Link> Facebook csoporthoz készült.</TextLine>
-          <TextLine><Link href="https://codepen.io/csuszka/pen/EEBBPa">Böngészőből is
+          <TextLine><Link href="https://codepen.io/csuszka/full/EEBBPa">Böngészőből is
             elérhető</Link> ez az
             alkalmazás.</TextLine>
           <TextLine>A mobilos alkalmazást készítette: <Link href="http://www.szeremi.org/">Szerémi
