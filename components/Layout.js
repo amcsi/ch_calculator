@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import Main from './Main';
 import Credits from './Credits';
 import { background } from '../data/colors';
+import { SafeAreaView } from 'react-native';
 
 class Layout extends React.Component {
   render() {
@@ -23,7 +24,9 @@ class Layout extends React.Component {
     });
 
     return (
-      <MainNavigator style={styles.container} />
+      <SafeAreaView style={{ flex: 1, backgroundColor: background }}>
+        <MainNavigator style={styles.container} />
+      </SafeAreaView>
     );
   }
 }
