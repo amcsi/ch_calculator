@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ch-calculator",
-    "description": "This project is really great.",
+    "name": "CH számoló",
+    "description": "Kiszámol szénhidrát mennyiségeket inzulin rezisztanciával rendelkező emberek számára.",
     "slug": "ch-calculator",
     "privacy": "public",
     "sdkVersion": "26.0.0",
