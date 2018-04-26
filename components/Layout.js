@@ -21,6 +21,7 @@ class Layout extends React.Component {
       },
       lazy: true,
       swipeEnabled: false,
+      cardStyle: { shadowColor: 'transparent' },
     });
 
     return (
