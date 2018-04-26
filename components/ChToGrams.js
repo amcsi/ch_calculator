@@ -39,23 +39,17 @@ class ChToGrams extends React.Component {
           placeholder="CH/étkezés"
         />
 
-        {(() => {
-          if (grams > 0) {
-            return (
-              <View style={{ flexDirection: 'row' }}>
-                <FormattedNumber
-                  value={grams}
-                  style={resultText}
-                  maximumFractionDigits={0}
-                />
-                <Text style={resultText}> </Text>
-                <Text style={resultText}>
-                  g összetevőben van ennyi CH
-                </Text>
-              </View>
-            );
-          }
-        })()}
+        <View style={{ flexDirection: 'row', opacity: grams > 0 ? 1 : 0 }}>
+          <FormattedNumber
+            value={grams}
+            style={resultText}
+            maximumFractionDigits={0}
+          />
+          <Text style={resultText}> </Text>
+          <Text style={resultText}>
+            g összetevőben van ennyi CH
+          </Text>
+        </View>
       </KeyboardAvoidingView>
     );
   }
