@@ -2,7 +2,7 @@ import React from 'react';
 import ChToGrams from './ChToGrams';
 import Swiper from 'react-native-swiper';
 import GramsToCh from './GramsToCh';
-import { TouchableOpacity, View } from 'react-native';
+import { Dimensions, TouchableOpacity, View } from 'react-native';
 import Text from './common/Text';
 import { view } from '../data/defaultStyles';
 import { alternativeText } from '../data/colors';
@@ -39,9 +39,10 @@ class Main extends React.Component {
   };
 
   render() {
+    const deviceWidth = Dimensions.get('window').width;
     return (
       <View style={[view, styles.container]}>
-        <Swiper loop={false} activeDotColor="#249081" style={{ flex: 1 }}>
+        <Swiper loop={false} activeDotColor="#249081" containerStyle={{ width: deviceWidth }}>
           <ChToGrams
             chPer100G={this.state.chPer100G}
             chPerMeal={this.state.chPerMeal}
