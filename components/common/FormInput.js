@@ -4,12 +4,14 @@ import defaultTextStyle from '../../data/defaultTextStyle';
 import { formInputBorderBottom, placeholderText } from '../../data/colors';
 
 /** @class */
-function FormInput({ inputStyle, placeholderTextColor, ...restProps }) {
+function FormInput({ containerStyle, inputStyle, placeholderTextColor, ...restProps }) {
   const borderBottomColor = formInputBorderBottom;
-  const _inputStyle = { ...defaultTextStyle, borderBottomColor: borderBottomColor };
+  const _containerStyle = { borderBottomColor: borderBottomColor };
+
   return (
     <RNEFormInput
-      inputStyle={[_inputStyle, inputStyle]}
+      inputStyle={[defaultTextStyle, inputStyle]}
+      containerStyle={[_containerStyle, containerStyle]}
       placeholderTextColor={placeholderTextColor || placeholderText}
       underlineColorAndroid={borderBottomColor}
       {...restProps}
