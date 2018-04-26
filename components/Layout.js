@@ -16,6 +16,7 @@ class Layout extends React.Component {
       navigationOptions: {
         headerStyle: {
           backgroundColor: background,
+          borderBottomWidth: 0,
         },
         headerTintColor: '#fff',
       },
