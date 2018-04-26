@@ -13,6 +13,7 @@ class Layout extends React.Component {
       },
       credits: { screen: Credits },
     }, {
+      headerMode: 'screen',
       navigationOptions: {
         headerStyle: {
           backgroundColor: background,
