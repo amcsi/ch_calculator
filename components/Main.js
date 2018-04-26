@@ -70,7 +70,7 @@ class Main extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    paddingBottom: 10,
+    paddingBottom: 20,
     display: 'flex',
     backgroundColor: '#00695C',
   },
