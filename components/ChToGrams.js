@@ -24,6 +24,7 @@ class ChToGrams extends React.Component {
         <FormLabel>CH/100g</FormLabel>
         <FormInput
           keyboardType="numeric"
+          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={chPer100G ? String(chPer100G) : ''}
           onChangeText={onChPer100GramChange}
@@ -33,6 +34,7 @@ class ChToGrams extends React.Component {
         <FormLabel>CH/étkezés</FormLabel>
         <FormInput
           keyboardType="numeric"
+          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={chPerMeal ? String(chPerMeal) : ''}
           onChangeText={onChPerMealChange}
