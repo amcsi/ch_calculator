@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { FormattedNumber } from 'react-native-globalize';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
@@ -13,14 +13,14 @@ class ChToGrams extends React.Component {
     const { chPer100G, grams, onChPer100GramChange, onGramsChange } = this.props;
     const chPerMeal = calculateChInGrams(chPer100G, grams);
 
+    const textCenter = { textAlign: 'center' };
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <Text style={resultText}>Hány gramm CH van ebben?</Text>
+        <Text style={[resultText, textCenter]}>Hány gramm CH van ebben?</Text>
 
         <FormLabel>CH/100g</FormLabel>
         <FormInput
           keyboardType="numeric"
-          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={chPer100G ? String(chPer100G) : ''}
           onChangeText={onChPer100GramChange}
@@ -30,14 +30,13 @@ class ChToGrams extends React.Component {
         <FormLabel>Súly</FormLabel>
         <FormInput
           keyboardType="numeric"
-          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={grams ? String(grams) : ''}
           onChangeText={onGramsChange}
           placeholder="Súly (g)"
         />
 
-        <View style={{ flexDirection: 'row', opacity: grams > 0 ? 1 : 0 }}>
+        <Text style={[textCenter, { opacity: grams > 0 ? 1 : 0 }]}>
           <FormattedNumber
             value={chPerMeal}
             style={resultText}
@@ -47,7 +46,7 @@ class ChToGrams extends React.Component {
           <Text style={resultText}>
             g CH van a lemért összetevőben
           </Text>
-        </View>
+        </Text>
       </KeyboardAvoidingView>
     );
   }
@@ -58,6 +57,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: '5%',
+    paddingRight: '5%',
   },
 });
 

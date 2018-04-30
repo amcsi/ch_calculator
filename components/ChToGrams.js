@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, StyleSheet, View } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { FormattedNumber } from 'react-native-globalize';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
@@ -17,14 +17,14 @@ class ChToGrams extends React.Component {
     const { chPer100G, chPerMeal, onChPer100GramChange, onChPerMealChange } = this.props;
     const grams = calculateGramsInCh(chPer100G, chPerMeal);
 
+    const textCenter = { textAlign: 'center' };
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <Text style={resultText}>Hány grammban van ennyi CH?</Text>
+        <Text style={[resultText, textCenter]}>Hány grammban van ennyi CH?</Text>
 
         <FormLabel>CH/100g</FormLabel>
         <FormInput
           keyboardType="numeric"
-          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={chPer100G ? String(chPer100G) : ''}
           onChangeText={onChPer100GramChange}
@@ -34,14 +34,13 @@ class ChToGrams extends React.Component {
         <FormLabel>CH/étkezés</FormLabel>
         <FormInput
           keyboardType="numeric"
-          containerStyle={{ width: '90%' }}
           selectTextOnFocus
           value={chPerMeal ? String(chPerMeal) : ''}
           onChangeText={onChPerMealChange}
           placeholder="CH/étkezés"
         />
 
-        <View style={{ flexDirection: 'row', opacity: grams > 0 ? 1 : 0 }}>
+        <Text style={[textCenter, { opacity: grams > 0 ? 1 : 0 }]}>
           <FormattedNumber
             value={grams}
             style={resultText}
@@ -51,7 +50,7 @@ class ChToGrams extends React.Component {
           <Text style={resultText}>
             g összetevőben van ennyi CH
           </Text>
-        </View>
+        </Text>
       </KeyboardAvoidingView>
     );
   }
@@ -62,6 +61,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: '5%',
+    paddingRight: '5%',
   },
 });
 
