@@ -111,3 +111,5 @@ buck-out/
 *.jsbundle
 android/app/ch-calculator.jks
 android/app/release/
+
+*.apk
