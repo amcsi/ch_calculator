@@ -1,0 +1,3 @@
+rootProject.name = 'ch_calculator_ejected'
+
+include ':app'
