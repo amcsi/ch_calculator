@@ -98,7 +98,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.ch_calculator_ejected"
+        applicationId "org.szeremi.ch_calculator"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1

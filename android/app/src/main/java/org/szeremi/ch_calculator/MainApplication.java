@@ -1,4 +1,4 @@
-package com.ch_calculator_ejected;
+package org.szeremi.ch_calculator;
 
 import android.app.Application;
 
