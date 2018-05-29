@@ -5,6 +5,8 @@ Web app version of this project by [@csuszka](https://github.com/csuszka) can be
 
 Facebook group 🇭🇺 for [Inzulinrezisztens Étrend](https://www.facebook.com/groups/428087894039073/)
 
+Available in the [Android Play Store](https://play.google.com/store/apps/details?id=org.szeremi.ch_calculator)
+
 ## License
 
 MIT
