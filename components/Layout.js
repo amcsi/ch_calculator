@@ -1,19 +1,20 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import Main from './Main';
 import Credits from './Credits';
 import { background } from '../data/colors';
 
 class Layout extends React.Component {
   render() {
-    const MainNavigator = StackNavigator({
+    const MainNavigator = createStackNavigator({
       main: {
         screen: Main,
       },
       credits: { screen: Credits },
     }, {
       headerMode: 'screen',
-      navigationOptions: {
+      defaultNavigationOptions: {
         headerStyle: {
           backgroundColor: background,
           borderBottomWidth: 0,
@@ -25,8 +26,10 @@ class Layout extends React.Component {
       cardStyle: { shadowColor: 'transparent' },
     });
 
+    const App = createAppContainer(MainNavigator);
+
     return (
-      <MainNavigator style={styles.container} />
+      <App style={styles.container} />
     );
   }
 }
