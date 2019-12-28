@@ -1,12 +1,12 @@
 import React from 'react';
-import ChToGrams from './ChToGrams';
-import Swiper from 'react-native-swiper';
-import GramsToCh from './GramsToCh';
 import { Dimensions, TouchableOpacity, View } from 'react-native';
-import Text from './common/Text';
-import { view } from '../data/defaultStyles';
-import { alternativeText } from '../data/colors';
+import Swiper from 'react-native-swiper';
 import { SafeAreaView } from 'react-navigation';
+import { alternativeText } from '../data/colors';
+import { view } from '../data/defaultStyles';
+import ChToGrams from './ChToGrams';
+import Text from './common/Text';
+import GramsToCh from './GramsToCh';
 
 /** @class */
 class Main extends React.Component {
@@ -23,19 +23,19 @@ class Main extends React.Component {
 
   onChPer100GramChange = chPer100G => {
     this.setState({
-      chPer100G: Number(chPer100G),
+      chPer100G: chPer100G,
     });
   };
 
   onChPerMealChange = chPerMeal => {
     this.setState({
-      chPerMeal: Number(chPerMeal),
+      chPerMeal: chPerMeal,
     });
   };
 
   onGramsChange = grams => {
     this.setState({
-      grams: Number(grams),
+      grams: grams,
     });
   };
 
