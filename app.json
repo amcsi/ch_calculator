@@ -26,7 +26,8 @@
     ],
     "android": {
       "package": "org.szeremi.ch_calculator",
-      "permissions": []
+      "permissions": [],
+      "versionCode": 2097155
     },
     "ios": {
       "supportsTablet": true
