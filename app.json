@@ -24,7 +24,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "android": { "package": "org.szeremi.ch_calculator" },
+    "android": {
+      "package": "org.szeremi.ch_calculator",
+      "permissions": []
+    },
     "ios": {
       "supportsTablet": true
     }
