@@ -10,7 +10,7 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,7 +27,7 @@
     "android": {
       "package": "org.szeremi.ch_calculator",
       "permissions": [],
-      "versionCode": 2097155
+      "versionCode": 2097157
     },
     "ios": {
       "supportsTablet": true
