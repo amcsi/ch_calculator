@@ -1,11 +1,11 @@
 import React from 'react';
 import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { FormattedNumber } from 'react-native-globalize';
+import { resultText } from '../data/defaultStyles';
+import { calculateGramsInCh } from '../services/calculators';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
-import { calculateGramsInCh } from '../services/calculators';
-import { resultText } from '../data/defaultStyles';
 
 /**
  * First page
@@ -44,7 +44,7 @@ class ChToGrams extends React.Component {
           <FormattedNumber
             value={grams}
             style={resultText}
-            maximumFractionDigits={0}
+            maximumFractionDigits={1}
           />
           <Text style={resultText}> </Text>
           <Text style={resultText}>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { FormattedNumber } from 'react-native-globalize';
+import { resultText } from '../data/defaultStyles';
+import { calculateChInGrams } from '../services/calculators';
 import FormInput from './common/FormInput';
 import FormLabel from './common/FormLabel';
 import Text from './common/Text';
-import { calculateChInGrams } from '../services/calculators';
-import { resultText } from '../data/defaultStyles';
 
 /** @class */
 class ChToGrams extends React.Component {
@@ -40,7 +40,7 @@ class ChToGrams extends React.Component {
           <FormattedNumber
             value={chPerMeal}
             style={resultText}
-            maximumFractionDigits={0}
+            maximumFractionDigits={1}
           />
           <Text style={resultText}> </Text>
           <Text style={resultText}>

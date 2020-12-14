@@ -7,12 +7,12 @@ export function calculateGramsInCh(chPer100g, chPerMeal) {
   if (!chPer100g || !chPerMeal) {
     return 0;
   }
-  return Math.round((normalizeNumber(chPerMeal) * 100) / normalizeNumber(chPer100g));
+  return (normalizeNumber(chPerMeal) * 100) / normalizeNumber(chPer100g);
 }
 
 export function calculateChInGrams(chPer100g, grams) {
   if (!chPer100g || !grams) {
     return 0;
   }
-  return Math.round((normalizeNumber(grams) * normalizeNumber(chPer100g)) / 100);
+  return (normalizeNumber(grams) * normalizeNumber(chPer100g)) / 100;
 }
