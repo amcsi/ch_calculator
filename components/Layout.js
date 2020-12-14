@@ -1,9 +1,9 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import Main from './Main';
-import Credits from './Credits';
 import { background } from '../data/colors';
+import Credits from './Credits';
+import Main from './Main';
 
 class Layout extends React.Component {
   render() {
