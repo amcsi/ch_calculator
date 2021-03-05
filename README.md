@@ -7,6 +7,8 @@ Facebook group 🇭🇺 for [Inzulinrezisztens Étrend](https://www.facebook.com
 
 Available in the [Android Play Store](https://play.google.com/store/apps/details?id=org.szeremi.ch_calculator)
 
+![Main screen](https://play-lh.googleusercontent.com/vIf9sV1JQFgb0wAN1CW98z8EGGNo8aVsIoHNXLNI7QV7NYRf4bxZIAggDHILczrx91M=w1920-h980-rw)
+
 ## License
 
 MIT
